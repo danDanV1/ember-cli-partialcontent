@@ -1,8 +1,11 @@
 import { module, test } from "qunit";
 import fetch from "fetch";
 
+/*
+Compare the response from fetching video from CDN vs localhost.
+*/
+
 module("Unit | video-header", function(hooks) {
-  // Replace this with your real tests.
   test("check response header from CDN", async function(assert) {
     const response = await fetch(
       "https://d2w6cdbrmkexx8.cloudfront.net/developer/View_From_A_Blue_Moon_Trailer-576p-22-to-29sec.webm",
@@ -83,7 +86,7 @@ module("Unit | video-header", function(hooks) {
     Content-Range: bytes 0-2732877/2732878
     status: 206 
 
-    Since this is local host, we should be able to test for them.
+    Since this is local host, we should be able to test for all the headers.
     */
   });
 });
